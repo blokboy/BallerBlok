@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Who you got?">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@JM">
+    <meta name="twitter:title" content="BallerBlok">
+    <meta name="twitter:description" content="Search the predictions of any Ethereum address/username.">
+    <title>BallerBlok - Search</title>
+    <link rel="stylesheet" href="./stylesheets/bulma.css">
+    <link rel="stylesheet" href="./stylesheets/jquery-modal.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+        <style>
+        .hero {
+          background: #80BBDB;
+        }
+        .hero-head {
+          background: #000;
+        }
+        h1.title {
+          font-size: 3em;
+          color: white;
+        }
+        h2.subtitle {
+          font-size: 2em;
+          color: white;
+        }
+        #logo {
+          font-size: 1.5em;
+          color: white;
+        }
+        .navbar-item {
+          background: rgba(0, 0, 0, 0.4) !important;
+        }
+        #hamburger-btn {
+          color: white;
+        }
+        a.navbar-item.is-active {
+          background: #333 !important;
+          color: white;
+        }
+        a.navbar-item:hover {
+          background: #333 !important;
+          color: white;
+        }
+        a.button.is-silent {
+          background: white;
+          color: maroon;
+          border-color: transparent;
+        }
+        a.button.is-silent.is-inverted {
+          color: maroon;
+          background: white;
+        }
+        .hero-body {
+          text-align: left;
+        }
+        #navbarMenuHeroC {
+          background: rgba(0, 0, 0, 0.3);
+        }
+        .navbar-item {
+          color: white;
+        }
+        .navbar-item.is-active {
+          color: white;
+        }
+        .homepage-body {
+          padding: 2%;
+        }
+        .is-flat-elevated {
+          color: black;
+        }
+        footer {
+          padding: 1.5rem;
+        }
+        </style>
+  </head>
+  <body>
+        <div>
+            <section class="hero is-info is-fullheight">
+                <div class="hero-head">
+                    <header class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                        <span id="logo" class="navbar-item">
+                            BallerBlok
+                        </span>
+                        <span id="hamburger-btn" class="navbar-burger burger" data-target="navbarMenuHeroC">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        </div>
+                        <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="/">
+                            Home
+                            </a>
+                            <span class="navbar-item">
+                            <a class="button is-silent">
+                                <!--<span class="icon">
+                                <i class="fa fa-github"></i>
+                                </span>-->
+                                <span>NCAA</span>
+                            </a>
+                            </span>
+                            <span class="navbar-item">
+                            <a class="button is-silent is-inverted" href="/edit">
+                                <!--<span class="icon">
+                                <i class="fa fa-github"></i>
+                                </span>-->
+                                <span>NBA</span>
+                            </a>
+                            </span>
+                            <span class="navbar-item">
+                            <a class="button is-silent is-inverted" href="/edit">
+                                <!--<span class="icon">
+                                <i class="fa fa-github"></i>
+                                </span>-->
+                                <span>Search</span>
+                            </a>
+                            </span>
+                        </div>
+                        </div>
+                    </div>
+                    </header>
+                </div>
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns is-desktop">
+                            <div class="column">
+                                <h1 class="title">Search</h1>
+                                <h2 class="subtitle">View the predictions of an Ethereum address or username.</h2>
+                            </div>
+                            <div id="formContainer" class="column">
+                                <form id="searchForm">
+                                    <div class="field">
+                                        <label class="label is-large">Address or Username</label>
+                                        <label class="label is-small">Type or paste an address or username to see that account's predictions!</label>
+                                        <div class="control has-icons-left">
+                                            <input id="searchAddress" class="input" type="text" placeholder="E.g.: 0x0000000000000000000000000000000000000000">
+                                            <span class="icon is-small is-left">
+                                                <i class="fa fa-money"></i>
+                                            </span>
+                                        </div>
+                                        <p id="searchWarning" class="help is-danger" style="display: none;">That doesn't look like an Ethereum address or BallerBlok usern.</p>
+                                    </div>
+                                    <div class="field is-grouped">
+                                        <div id="searchSubmitBtn" class="control">
+                                            <a href="#" onclick="getBallerByAddress(); getBallerByUsername(); return false;"><input type="submit" class="button is-link"></a>
+                                        </div>
+                                        <div id="searchCancelBtn" class="control">
+                                            <button class="button is-text">Cancel</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="./stylesheets/jquery.js" type="text/javascript"></script>
+        <script>
+            alert = function(msg){
+                $('#modal').text(msg).modal();
+            };
+            window.onload = function(){
+                let menuActive = false;
+                $('#hamburger-btn').click(function(){
+                    if(menuActive){
+                        $('#navbarMenuHeroC').attr('class', 'nav-right navbar-menu');
+                        menuActive = !menuActive;
+                    }else{
+                        $('#navbarMenuHeroC').attr('class', 'nav-right navbar-menu is-active');
+                        menuActive = !menuActive;
+                    }
+                });
+                
+                function isValidAddress (addr) {
+                    return addr.trim().substring(0, 2) === '0x' && addr.length === 42;
+                }
+
+                function isValidUsername (user) {
+                    return user.length <= 2 ** 8 - 1;
+                }
+
+                document.getElementById('searchAddress').addEventListener('keyup', function () {
+                    let searchInput = document.getElementById('searchAddress')
+                    let searchWarning = document.getElementById('searchWarning')
+                    if (isValidAddress(searchInput)) {
+                        searchWarning.style.display = isValidAddress(searchInput.value) ? 'none' : 'inline'
+                    }
+                    
+                    searchWarning.style.display = isValidUsername(searchInput.value) ? 'none' : 'inline'
+                })
+                document.getElementById('searchForm').onsubmit = function (e) {
+                    if (
+                        isValidAddress(document.getElementById('searchAddress').value)
+                    ) {
+                    e.preventDefault()
+                    window.location = window.location.origin + '/' + document.getElementById('searchAddress').value.trim()
+                    } else {
+                    return false
+                    }
+                }
+            };
+        </script>
+  </body>
+</html>

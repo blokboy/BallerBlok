@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Who you got?">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@jm">
+    <meta name="twitter:title" content="BallerBlok">
+    <meta name="twitter:description" content="Prediction Markets on Blockchain">
+    <title>BallerBlok - Basketball Prediction Market on Blockchain</title>
+    <link rel="stylesheet" href="./stylesheets/bulma.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .hero {
+          background: #80BBDB;
+        }
+        .hero-head {
+          background: #000;
+        }
+        h1.title {
+          font-size: 3em;
+          color: white;
+        }
+        h2.subtitle {
+          font-size: 2em;
+          color: white;
+        }
+        #logo {
+          font-size: 1.5em;
+          color: white;
+        }
+        .navbar-item {
+          background: rgba(0, 0, 0, 0.4) !important;
+        }
+        #hamburger-btn {
+          color: white;
+        }
+        a.navbar-item.is-active {
+          background: #333 !important;
+          color: white;
+        }
+        a.navbar-item:hover {
+          background: #333 !important;
+          color: white;
+        }
+        a.button.is-silent {
+          background: white;
+          color: maroon;
+          border-color: transparent;
+        }
+        a.button.is-silent.is-inverted {
+          color: maroon;
+          background: white;
+        }
+        .hero-body {
+          text-align: left;
+        }
+        #navbarMenuHeroC {
+          background: rgba(0, 0, 0, 0.3);
+        }
+        .navbar-item {
+          color: white;
+        }
+        .navbar-item.is-active {
+          color: white;
+        }
+        .homepage-body {
+          padding: 2%;
+        }
+        .is-flat-elevated {
+          color: black;
+        }
+        footer {
+          padding: 1.5rem;
+        }
+        </style>
+  </head>
+  <body>
+      <div>
+          <section class="hero is-fullheight">
+            <div class="hero-head">
+              <header class="navbar">
+                <div class="container">
+                  <div class="navbar-brand">
+                    <span id="logo" class="navbar-item">
+                      BallerBlok
+                    </span>
+                    <span id="hamburger-btn" class="navbar-burger burger" data-target="navbarMenuHeroC">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </div>
+                  <div id="navbarMenuHeroC" class="navbar-menu">
+                    <div class="navbar-end">
+                      <a class="navbar-item is-active" href="/index">
+                        Home
+                      </a>
+                      <span class="navbar-item">
+                        <a class="button is-silent" href="/ncaa">
+                          <!--<span class="icon">
+                            <i class="fa fa-github"></i>
+                          </span>-->
+                          <span>NCAA</span>
+                        </a>
+                      </span>
+                      <span class="navbar-item">
+                        <a class="button is-silent is-inverted" href="/nba">
+                          <!--<span class="icon">
+                            <i class="fa fa-github"></i>
+                          </span>-->
+                          <span>NBA</span>
+                        </a>
+                      </span>
+                      <span class="navbar-item">
+                        <a class="button is-silent is-inverted" href="/search">
+                          <!--<span class="icon">
+                            <i class="fa fa-github"></i>
+                          </span>-->
+                          <span>Search</span>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <!-- Hero content: will be in the middle -->
+            <div class="hero-body has-text-centered">
+              <div class="container">
+                <h1 class="title">
+                  BallerBlok
+                </h1>
+                <h2 class="subtitle">
+                  Basketball Prediction Market on Blockchain
+                </h2>
+              </div>
+            </div>
+          </section>
+            <div class="homepage-body">
+              <nav class="level is-desktop">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Use Case</p>
+                    <p class="title">Market for Unaltered Predictions</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Prediction Price (Min)</p>
+                    <p class="title">0.0005 ETH (< $0.50 USD)</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Division Choices</p>
+                    <p class="title">NCAA and NBA</p>
+                  </div>
+                </div>
+              </nav>
+              <div class="container">
+              	<div class="columns">
+  					<div class="column is-narrow">
+    				<div class="box" style="width: 300px;">
+      				<p class="title is-5"><a class="button is-silent is-inverted">Villanova</a></p>
+      				<p class="subtitle">Ranked #1 in the East</p>
+              <div id="searchSubmitBtn" class="control">
+                <input id="team" type="button" class="button is-link" value="Call It" onclick="ncaaVote()">
+              </div>
+    				</div>
+  					</div>
+  					<div class="column is-narrow">
+    				<div class="box" style="width: 300px;">
+      				<p class="title is-5"><a class="button is-silent is-inverted">UMich</a></p>
+      				<p class="subtitle">Ranked #3 in the West</p>
+              <div id="searchSubmitBtn" class="control">
+                 <input id="team" type="button" class="button is-link" value="Call It" onclick="ncaaVote()">
+              </div>
+    				</div>
+  					</div>
+  					<div class="column is-narrow">
+    				<div class="box" style="width: 300px;">
+      				<p class="title is-5"><a class="button is-silent is-inverted">KU</a></p>
+      				<p class="subtitle">Ranked #1 in the Midwest</p>
+              <div id="searchSubmitBtn" class="control">
+                 <input id="team" type="button" class="button is-link" value="Call It" onclick="ncaaVote()">
+              </div>
+    				</div>
+  					</div>
+  					<div class="column is-narrow">
+    				<div class="box" style="width: 300px;">
+      				<p class="title is-5"><a class="button is-silent is-inverted">Loyola</a></p>
+      				<p class="subtitle">Ranked #11 in the South</p>
+              <div id="searchSubmitBtn" class="control">
+                 <input id="team" type="button" class="button is-link" value="Call It" onclick="ncaaVote()">
+              </div>
+    				</div>
+  					</div>
+
+                </div>
+            <footer class="footer">
+              <div class="container">
+                <div class="content has-text-centered">
+                  <p>
+                    <strong>BallerBlok</strong> - <a href="http://github.com/blok-labs">JM</a>.
+                  </p>
+                </div>
+              </div>
+            </footer>
+          </div>
+          <script src="./stylesheets/jquery.js" type="text/javascript"></script>
+          <script>
+            window.onload = function(){
+              let menuActive = false;
+              $('#hamburger-btn').click(function(){
+                if(menuActive){
+                    $('#navbarMenuHeroC').attr('class', 'nav-right navbar-menu');
+                    menuActive = !menuActive;
+                }else{
+                    $('#navbarMenuHeroC').attr('class', 'nav-right navbar-menu is-active');
+                    menuActive = !menuActive;
+                }
+              });
+            };
+          </script>
+  </body>
+</html>

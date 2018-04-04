@@ -49,7 +49,7 @@ contract ballerBlok is Ownable {
 	}
 
 	function nameTaken(bytes32[] _userName) public view returns (bool) {
-		for(uint8 = 0; i < ballers.length; i++) {
+		for(uint8 i = 0; i < ballers.length; i++) {
 			if(ballers[i].userName == _userName) {
 				return true;
 			}

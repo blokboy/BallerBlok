@@ -40,8 +40,8 @@ contract ballerBlok is Ownable {
 	}
 
 	function ballerBlok(uint16 amtwei) public {
-		owner = msg.sender;
 		minPay = amtwei;
+		owner = msg.sender;
 	}
 
 	function setMinPay(uint16 amtwei) onlyOwner internal {
@@ -76,17 +76,17 @@ contract ballerBlok is Ownable {
 	}
 
 	function ncaaVote(address baller, uint8 choice) payable paidMin hasntVotedNCAA public {
-		owner.transfer(msg.value);
 		ballerRecs[baller].ncaaChoice = choice;
 		ballerRecs[baller].ncaaVote = true;
 		voteCast(msg.sender, choice);
+		owner.transfer(msg.value);
 	}
 
 	function nbaVote(address baller, uint8 choice) payable paidMin hasntVotedNBA public {
-		owner.transfer(msg.value);
 		ballerRecs[baller].nbaChoice = choice;
 		ballerRecs[baller].nbaVote = true;
 		voteCast(msg.sender, choice);
+		owner.transfer(msg.value);
 	}
 
 	function createBaller(bytes32[] userName) public {

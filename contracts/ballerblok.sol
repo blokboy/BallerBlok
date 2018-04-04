@@ -13,11 +13,12 @@ contract ballerBlok is Ownable {
 	}
 
 	address private owner;
-	Baller[] public ballers;
 	uint16 private minPay;
+	uint private ballerCount;
 	Event newBaller(uint8 indexed baller, bytes32[] userName);
 	Event voteCast(address indexed baller, uint8 choice);
 	mapping(address => Baller) public ballerRecs;
+	mapping(bytes32 => Baller) public ballerNames;
 
 	modifier paidMin{
 		require(msg.value >= minPay);
@@ -41,6 +42,7 @@ contract ballerBlok is Ownable {
 
 	function ballerBlok(uint16 amtwei) public {
 		minPay = amtwei;
+		ballerCount = 0;
 		owner = msg.sender;
 	}
 
@@ -49,12 +51,7 @@ contract ballerBlok is Ownable {
 	}
 
 	function nameTaken(bytes32[] _userName) public view returns (bool) {
-		for(uint8 i = 0; i < ballers.length; i++) {
-			if(ballers[i].userName == _userName) {
-				return true;
-			}
-		}
-		return false;
+		return (ballerNames[_userName].exists);
 	}
 
 	function getBallerByAddress(address baller) public view returns (bytes32[], uint8, uint8) {
@@ -64,15 +61,11 @@ contract ballerBlok is Ownable {
 
 	function getBallerByUserName(bytes32[] _userName) public view returns (address, uint8, uint8) {
 		require(nameTaken(_userName) == true);
-		for(uint i = 0; i < ballers.length; i++) {
-			if(baller[i].userName == _userName) {
-				return (baller[i].who, baller[i].ncaachoice, baller[i].nbachoice);
-			}
-		}
+		return(ballerNames[_userName]);
 	}
 
-	function getTotalBallers() public view returns (uint8) {
-		return ballers.length;
+	function getTotalBallers() public view returns (uint) {
+		return ballerCount;
 	}
 
 	function ncaaVote(address baller, uint8 choice) payable paidMin hasntVotedNCAA public {
@@ -91,8 +84,10 @@ contract ballerBlok is Ownable {
 
 	function createBaller(bytes32[] userName) public {
 		require(nameTaken(userName) == false);
-		uint8 ID = ballers.push(Baller(msg.sender, true, false, false, userName, 0, 0));
-		ballerRecs[msg.sender] = ballers[ballers.length - 1];
+		Baller baller = Baller(msg.sender, true, false, false, userName, 0, 0);
+		ballerRecs[msg.sender] = baller;
+		ballerNames[userName] = baller;
+		ballerCount += 1;
 		newBaller(ID, userName);
 	}
 }

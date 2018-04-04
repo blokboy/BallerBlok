@@ -75,7 +75,7 @@ contract ballerBlok is Ownable {
 		return ballers.length;
 	}
 
-	function ncaaVote(address baller, uint8 choice) payable paidMin hasntVotedNBA public {
+	function ncaaVote(address baller, uint8 choice) payable paidMin hasntVotedNCAA public {
 		owner.transfer(msg.value);
 		ballerRecs[baller].ncaaChoice = choice;
 		ballerRecs[baller].ncaaVote = true;
